@@ -1,17 +1,31 @@
 # Descripción del servicio
 
-Servicio 1: Recomendación de Donación
-La ONG a cargo del sistema quiere extender la posibilidad de donaciones a otras comunidades existentes. Para ello se requiere generar un servicio que dada una ubicación geográfica, propone los lugares dónde podés acercar donaciones.
-
+### Servicio 1: Recomendación de Donación
+Este servicio permite a la ONG a cargo del sistema extender la posibilidad de donaciones a otras comunidades. A partir de una ubicación geográfica, el sistema recomienda los lugares donde puedes acercar tus donaciones.
 
 ## Guía completa y detallada de uso
 
-- Paso 1: tener Node instalado [lo podes hacer en este link](https://nodejs.org/en/download/prebuilt-installer)
-- Paso 2: tener MySQL server instalado
-- Paso 3: clonar este repositorio en tu computadora
-- Paso 4: abrir una consola parada en el proyecto y correr
-  ``` npm i ``` Luego de este paso deberías tener una carpeta llamda `node_modules` en el proyecto
-- Paso 5: configurar las variables de entorno: tenes que agregar a la raíz del proyecto un archivo con el nombre `.env` en el cual tenes que configurar las distintas credenciales de la base de datos. Acá tenes un ejemplo de como deberia quedar
+- ### Paso 1: Instalar Node.js
+Asegurate de tener [Node.js instalado](https://nodejs.org/en/download/prebuilt-installer).
+
+- ### Paso 2: Instalar MySQL Server
+Debes tener MySQL Server instalado y configurado en tu sistema.
+
+- ### Paso 3: Clonar el repositorio
+Clona este repositorio en tu computadora con el siguiente comando:
+
+```bash
+git clone https://github.com/GonTurri/servicio_dds_grupo_07_martes.git
+```
+
+- ### Paso 4: Instalar dependencias
+Abri una consola en la carpeta del proyecto y ejecuta el siguiente comando para instalar las dependencias:
+```bash
+npm i
+```
+
+- ### Paso 5: Configurar las variables de entorno
+Crea un archivo .env en la raíz del proyecto y configura las credenciales de la base de datos. Aca tienes un ejemplo de cómo debería quedar:
 ``` env
 DB_COMUNIDADES_USER=root
 DB_COMUNIDADES_PORT=3306
@@ -19,9 +33,11 @@ DB_COMUNIDADES_PSWD=mysql
 DB_COMUNIDADES_DBNAME=tp_dds_comunidades
 DB_COMUNIDADES_HOST=localhost
 ```
-Notar que antes de correr el servidor tenes que tener creada la base de datos vacía con el mismo nombre que está en `DB_COMUNIDADES_DBNAME` para que se pueda generar el esquema correctamente
 
-- Paso 6: insertar algunos datos de prueba a la base de datos. Te dejamos este ejemplo, igualmente podes insertar lo que prefieras
+Asegurate de tener creada una base de datos vacía con el mismo nombre que está en DB_COMUNIDADES_DBNAME para que se genere el esquema correctamente.
+
+- ### Paso 6: Insertar datos de prueba
+Inserta algunos datos de prueba en la base de datos. Puedes usar el siguiente SQL como ejemplo:
  ``` sql
  INSERT INTO comunidad (id, nombre, lat, lon) VALUES
 (1, 'Comunidad A', -34.61178, -58.417308),
@@ -35,13 +51,17 @@ Notar que antes de correr el servidor tenes que tener creada la base de datos va
 (9, 'Comunidad I', -34.609234, -58.445187),
 (10, 'Comunidad J', -34.583449, -58.418373);
 ```
-- Paso 7: una vez todo configurado ya podemos levantar el server ejecutando el siguiente comando en la terminal
-  
-   `npm run start`
+- ### Paso 7: una vez todo configurado ya podemos levantar el server ejecutando el siguiente comando en la terminal
+```bash 
+npm run start
+```
 
-- Si salió todo bien, ya podes empezar a usar el servicio! Para acceder a la documentación en local proba entrando a este link: http://localhost:3000/docs/
+- ### Si salió todo bien,  ya podes empezar a usar el servicio. Para acceder a la documentación en local, visita:
+```url
+http://localhost:3000/docs/
+```
 
-Tené cuidado! Para poder solicitar comunidades primero tenes que generar una API Key y ponerla en Headers: Authorization <br />
-Si estás hace mas de 5 minutos y no te funciona, nos podes contactar! Abz.
+**Nota:** Para poder solicitar comunidades, primero debes generar una API Key y añadirla en los Headers como `Authorization`. Si estás hace mas de 5 minutos y no te funciona, nos podes contactar! Abz.
+
 
 
