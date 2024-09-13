@@ -23,6 +23,7 @@ Abri una consola en la carpeta del proyecto y ejecuta el siguiente comando para 
 ```bash
 npm i
 ```
+Luego de este paso deberías tener una carpeta llamda `node_modules` en el proyecto
 
 - ### Paso 5: Configurar las variables de entorno
 Crea un archivo .env en la raíz del proyecto y configura las credenciales de la base de datos. Aca tienes un ejemplo de cómo debería quedar:
